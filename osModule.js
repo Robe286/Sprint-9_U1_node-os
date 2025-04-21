@@ -1,28 +1,23 @@
 /* crear objeto con los datos:
     - Nombre, Tipo, Versión, Arquitectura, CPUs, Memoria Total, Memoria Libre.
     - Memoria Total y Memoria Libre tendrá que estar en MB.
-    Mira que dato dá y qué cáculo debes hacer
-
-    **Ejemplo de output:**
-Nombre: darwin
-Tipo: Darwin
-Versión: Darwin Kernel Version 23.1.0: Mon Oct  9 21:27:27 PDT 2023; root:xnu-10002.41.9~6/RELEASE_X86_64
-Arquitectura: x64
-CPUs: 12
-MemoriaTotal: 16384.00 MB
-MemoriaLibre: 370.71 MB
+    Mira que dato dá y qué cáculo debes hacer.
 */
+
 const os = require('node:os')
-console.log(os.version())
+//console.log(os.freemem())
 //console.log(os.version())
 //console.log(os.platform())
 //console.log(os.cpus().length)
+//console.log(`Memoria Total: ${Math.round(os.totalmem() / 1024 /1024)} MB`)
+//console.log(`Memoria libre: ${Math.round(os.freemem() / 1024 / 1024)} MB`)
 const pcData = {
-    Nombre: '',
+    Nombre: `${os.type()}`,
     Tipo: `${os.type()}`,
-    Versión: '',
+    Version: `${os.version()}`,
     Arquitectura: `${os.arch()}`,
     CPUs: `${os.cpus().length}`,
-    MemoriaTotal: '',
-    MemoriaLibre: '',
+    MemoriaTotal: `${Math.round(os.totalmem() / 1024 /1024)} MB`,
+    MemoriaLibre: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
 }
+console.log(pcData)
