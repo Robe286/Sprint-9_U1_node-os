@@ -21,5 +21,5 @@ const pcData = {
     MemoriaLibre: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
 }
 
-export default pcData;
+module.exports = pcData;
 //console.log(pcData)

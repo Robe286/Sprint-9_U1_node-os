@@ -1,2 +1,2 @@
-import pcData from "./osModule";
+const pcData = require('./osModule')
 console.log(pcData)
