@@ -20,4 +20,6 @@ const pcData = {
     MemoriaTotal: `${Math.round(os.totalmem() / 1024 /1024)} MB`,
     MemoriaLibre: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
 }
-console.log(pcData)
+
+export default pcData;
+//console.log(pcData)
