@@ -5,21 +5,18 @@
 */
 
 const os = require('node:os')
-//console.log(os.freemem())
-//console.log(os.version())
-//console.log(os.platform())
-//console.log(os.cpus().length)
-//console.log(`Memoria Total: ${Math.round(os.totalmem() / 1024 /1024)} MB`)
-//console.log(`Memoria libre: ${Math.round(os.freemem() / 1024 / 1024)} MB`)
-const pcData = {
-    Nombre: `${os.type()}`,
-    Tipo: `${os.type()}`,
-    Version: `${os.version()}`,
-    Arquitectura: `${os.arch()}`,
-    CPUs: `${os.cpus().length}`,
-    MemoriaTotal: `${Math.round(os.totalmem() / 1024 /1024)} MB`,
-    MemoriaLibre: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
-}
 
-module.exports = pcData;
-//console.log(pcData)
+function osInformation () {
+    return {
+        Nombre: `${os.platform()}`,
+        Tipo: `${os.type()}`,
+        Version: `${os.version()}`,
+        Arquitectura: `${os.arch()}`,
+        CPUs: `${os.cpus().length}`,
+        MemoriaTotal: `${Math.round(os.totalmem() / 1024 /1024)} MB`,
+        MemoriaLibre: `${Math.round(os.freemem() / 1024 / 1024)} MB`,
+    }
+}
+// También se podría crear otro módulo que contenga una función que haga la conversión.
+
+module.exports = osInformation
